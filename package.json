@@ -1,0 +1,20 @@
+{
+  "name": "vue-vuerouter-vuex-ssr",
+  "version": "1.0.0",
+  "description": "vue-vueRouter-vuex-ssr",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lrn",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.5.16",
+    "vue-loader": "^14.2.2",
+    "webpack": "^3.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:liiiku/vue-vueRouter-vux-ssr.git"
+  }
+}
