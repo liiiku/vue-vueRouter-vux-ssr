@@ -15,16 +15,18 @@ const defaultPlugins = [
       NODE_ENV: isDev ? '"development"' : '"production"'
     }
   }),
-  new HTMLPlugin()
+  new HTMLPlugin({
+    template: path.join(__dirname, 'template.html')
+  })
 ]
 
 const devServer = {
   port: 9000,
-    host: '0.0.0.0',
-    overlay: {
-      errors: true
-    },
-    hot: true
+  host: '0.0.0.0',
+  overlay: {
+    errors: true
+  },
+  hot: true
 }
 
 if (isDev) {
@@ -35,8 +37,15 @@ if (isDev) {
         {
           test: /\.styl/,
           use: [
-            'style-loader',
+            'vue-style-loader',
             'css-loader',
+            // {
+            //   loader: 'css-loader',
+            //   options: {
+            //     module: true,
+            //     localIdentName: isDev ? '[path]-[name]-[hash:base64:5]' : '[hash:base64:5]'
+            //   }
+            // },
             {
               loader: 'postcss-loader',
               options: {
@@ -68,7 +77,7 @@ if (isDev) {
         {
           test: /\.styl/,
           use: ExtractPlugin.extract({
-            fallback: 'style-loader',
+            fallback: 'vue-style-loader',
             use: [
               'css-loader',
               {
