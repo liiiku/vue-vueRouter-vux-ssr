@@ -26,7 +26,12 @@ const devServer = {
   overlay: {
     errors: true
   },
-  hot: true
+  hot: true,
+  historyApiFallback: {
+    index: '/public/index.html' // 就是html-webpack-plugin生成的html的位置，这里面的路径写法，和base中的output有关系的
+    // index: 'index.html'
+    // disableDotRule: true
+  }
 }
 
 if (isDev) {
